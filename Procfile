@@ -1,1 +1,1 @@
-web: php artisan package:discover --quiet && php artisan key:generate --force && php artisan migrate --force && php artisan config:cache && php artisan storage:link && vendor/bin/heroku-php-apache2 public/
+web: bash start.sh
