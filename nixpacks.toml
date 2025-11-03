@@ -4,24 +4,10 @@ PHP_VERSION = '8.2'
 [phases.build]
 cmds = [
     'composer install --no-dev --optimize-autoloader',
-    'npm ci && npm run build'
-]
-
-[start]
-cmd = 'vendor/bin/heroku-php-apache2 public/'gs = ['php8.2-intl', 'php8.2-zip', 'php8.2-gd', 'php8.2-exif']
-cmds = [
-    'composer install --no-dev --optimize-autoloader --ignore-platform-req=ext-intl --ignore-platform-req=ext-zip --ignore-platform-req=ext-gd',
-    'npm ci && npm run build'
-]
-
-[phases.deploy]
-cmds = [
+    'npm ci && npm run build',
     'php artisan key:generate --force',
     'php artisan migrate --force',
-    'php artisan db:seed --force',
     'php artisan config:cache',
-    'php artisan route:cache',
-    'php artisan view:cache',
     'php artisan storage:link'
 ]
 
