@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Mie Ikan Laut Pedas - Admin Preview</title>
+        <style>
+            body {
+                margin: 0;
+                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+                background: linear-gradient(135deg, #fef7ed 0%, #fdedd3 100%);
+                min-height: 100vh;
+            }
+
+            .header {
+                background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+                color: white;
+                padding: 1rem 2rem;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .logo-section {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .logo {
+                width: 40px;
+                height: 40px;
+                background: white;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: bold;
+                color: #f59e0b;
+            }
+
+            .brand-name {
+                font-size: 1.5rem;
+                font-weight: 700;
+            }
+
+            .container {
+                max-width: 1200px;
+                margin: 2rem auto;
+                padding: 0 1rem;
+            }
+
+            .stats-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .stat-card {
+                background: white;
+                border-radius: 1rem;
+                padding: 1.5rem;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+                border: 1px solid #fbd9a5;
+                transition: all 0.2s ease-in-out;
+            }
+
+            .stat-card:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 10px 25px rgba(245, 158, 11, 0.1);
+            }
+
+            .stat-value {
+                font-size: 2rem;
+                font-weight: 700;
+                color: #f59e0b;
+                margin-bottom: 0.5rem;
+            }
+
+            .stat-label {
+                font-size: 1rem;
+                color: #6b7280;
+                margin-bottom: 0.25rem;
+            }
+
+            .stat-description {
+                font-size: 0.875rem;
+                color: #9ca3af;
+            }
+
+            .welcome-section {
+                background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+                color: white;
+                padding: 2rem;
+                border-radius: 1rem;
+                text-align: center;
+                margin-bottom: 2rem;
+            }
+
+            .welcome-section h2 {
+                margin: 0 0 0.5rem 0;
+                font-size: 2rem;
+            }
+
+            .welcome-section p {
+                margin: 0;
+                opacity: 0.9;
+                font-size: 1.125rem;
+            }
+
+            .feature-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .feature-card {
+                background: white;
+                border-radius: 1rem;
+                padding: 1.5rem;
+                border: 1px solid #fbd9a5;
+            }
+
+            .feature-title {
+                font-size: 1.25rem;
+                font-weight: 600;
+                color: #b45309;
+                margin-bottom: 1rem;
+            }
+
+            .feature-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .feature-list li {
+                padding: 0.5rem 0;
+                border-bottom: 1px solid #f3f4f6;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .feature-list li:last-child {
+                border-bottom: none;
+            }
+
+            .check-icon {
+                width: 16px;
+                height: 16px;
+                background: #10b981;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 0.75rem;
+            }
+
+            .status-badge {
+                display: inline-block;
+                padding: 0.5rem 1rem;
+                border-radius: 0.75rem;
+                font-size: 0.875rem;
+                font-weight: 600;
+            }
+
+            .status-open {
+                background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+                color: white;
+            }
+
+            .status-closed {
+                background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+                color: white;
+            }
+
+            @media (max-width: 768px) {
+                .header {
+                    padding: 1rem;
+                }
+
+                .brand-name {
+                    font-size: 1.25rem;
+                }
+
+                .container {
+                    margin: 1rem auto;
+                }
+
+                .welcome-section {
+                    padding: 1.5rem;
+                }
+
+                .welcome-section h2 {
+                    font-size: 1.5rem;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <div class="logo-section">
+                <div class="logo">🍜</div>
+                <div class="brand-name">Mie Ikan Laut Pedas</div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="welcome-section">
+                <h2>Selamat Datang di Admin Panel</h2>
+                <p>
+                    Kelola restoran Mie Ikan Laut Pedas dengan mudah dan efisien
+                </p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">BUKA</div>
+                    <div class="stat-label">Status Toko</div>
+                    <div class="stat-description">10:00 - 21:00</div>
+                    <span class="status-badge status-open">Sedang Buka</span>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-value">25</div>
+                    <div class="stat-label">Total Menu</div>
+                    <div class="stat-description">Item menu tersedia</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-value">5</div>
+                    <div class="stat-label">Kategori Menu</div>
+                    <div class="stat-description">Kategori makanan</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-value">12</div>
+                    <div class="stat-label">Testimoni</div>
+                    <div class="stat-description">Testimoni unggulan</div>
+                </div>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-title">🍽️ Manajemen Menu</div>
+                    <ul class="feature-list">
+                        <li>
+                            <span class="check-icon">✓</span> Kelola menu dan
+                            kategori
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span> Upload gambar
+                            makanan
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span> Set harga dan
+                            level pedas
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span> Status
+                            ketersediaan menu
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-title">🕒 Jadwal Toko</div>
+                    <ul class="feature-list">
+                        <li>
+                            <span class="check-icon">✓</span> Atur jam buka
+                            tutup
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span> Set hari libur
+                            khusus
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span> Jam istirahat
+                            fleksibel
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span> Status real-time
+                            toko
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-title">⭐ Testimoni & Review</div>
+                    <ul class="feature-list">
+                        <li>
+                            <span class="check-icon">✓</span> Kelola testimoni
+                            pelanggan
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span> Rating dan
+                            komentar
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span> Testimoni unggulan
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span> Moderasi review
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-title">📊 Analytics & Reports</div>
+                    <ul class="feature-list">
+                        <li>
+                            <span class="check-icon">✓</span> Tracking
+                            pengunjung
+                        </li>
+                        <li><span class="check-icon">✓</span> Menu populer</li>
+                        <li>
+                            <span class="check-icon">✓</span> Statistik
+                            penjualan
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span> Export laporan
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

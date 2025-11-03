@@ -1,0 +1,8 @@
+{
+    "build": {
+        "buildCommand": "composer install --no-dev --optimize-autoloader"
+    },
+    "deploy": {
+        "startCommand": "bash railway-deploy.sh && vendor/bin/heroku-php-apache2 public/"
+    }
+}
