@@ -1,4 +1,9 @@
 #!/bin/bash
+# Railway Deploy Script - Simplified
+echo "🚀 Starting Railway Deploy Process..."
+
+# Skip extension checks - Railway handles this
+echo "📦 Using Railway's PHP setup..."sh
 # Railway Deploy Script
 echo "🚀 Starting Railway Deploy Process..."
 
