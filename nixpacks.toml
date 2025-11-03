@@ -1,14 +1,14 @@
 [variables]
-PHP_VERSION = '8.2'
+PHP_VERSION = '8.1'
+
+[phases.setup]
+nixPkgs = ['php81']
 
 [phases.build]
 cmds = [
-    'composer install --no-dev --ignore-platform-reqs --optimize-autoloader',
-    'npm ci && npm run build',
-    'php artisan key:generate --force',
-    'php artisan migrate --force',
-    'php artisan config:cache',
-    'php artisan storage:link'
+    'composer install --no-dev --ignore-platform-reqs --no-scripts --optimize-autoloader',
+    'composer dump-autoload --optimize',
+    'npm ci && npm run build'
 ]
 
 [start]
