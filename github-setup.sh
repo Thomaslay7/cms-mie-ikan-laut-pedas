@@ -45,26 +45,26 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
     - uses: actions/checkout@v3
-    
+
     - name: Setup PHP
       uses: shivammathur/setup-php@v2
       with:
         php-version: '8.2'
         extensions: mbstring, xml, ctype, iconv, intl, pdo, pdo_mysql, dom, filter, gd, json, zip
-        
+
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
         node-version: '18'
-        
+
     - name: Install dependencies
       run: |
         composer install --no-dev --optimize-autoloader
         npm ci && npm run build
-        
+
     - name: Deploy to production
       run: |
         echo "🚀 Ready for deployment!"
@@ -83,7 +83,7 @@ chmod +x vercel-setup.sh
 ./vercel-setup.sh
 ```
 
-### 2. Render (Best for Database)  
+### 2. Render (Best for Database)
 ```bash
 chmod +x render-setup.sh
 ./render-setup.sh
@@ -91,7 +91,7 @@ chmod +x render-setup.sh
 
 ### 3. Heroku (Most Reliable)
 ```bash
-chmod +x heroku-setup.sh  
+chmod +x heroku-setup.sh
 ./heroku-setup.sh
 ```
 
@@ -103,12 +103,12 @@ chmod +x netlify-setup.sh
 
 ## Environment Variables Needed:
 - APP_KEY (generate with: php artisan key:generate --show)
-- DATABASE_URL 
+- DATABASE_URL
 - APP_ENV=production
 - APP_DEBUG=false
 
 ## After Deploy:
-1. Create admin user: php artisan make:filament-user  
+1. Create admin user: php artisan make:filament-user
 2. Access: https://your-app/admin
 3. Upload logo and content
 EOF

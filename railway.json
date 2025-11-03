@@ -1,8 +1,13 @@
 {
-    "build": {
-        "buildCommand": "composer install --no-dev --optimize-autoloader"
-    },
-    "deploy": {
-        "startCommand": "bash railway-deploy.sh && vendor/bin/heroku-php-apache2 public/"
-    }
+  "build": {
+    "buildCommand": "composer install --no-dev --optimize-autoloader --ignore-platform-req=ext-intl --ignore-platform-req=ext-zip --ignore-platform-req=ext-gd"
+  },
+  "deploy": {
+    "startCommand": "bash railway-deploy.sh && vendor/bin/heroku-php-apache2 public/"
+  },
+  "environmentVariables": {
+    "APP_ENV": "production",
+    "APP_DEBUG": "false",
+    "APP_NAME": "Regina's Kitchen CMS"
+  }
 }

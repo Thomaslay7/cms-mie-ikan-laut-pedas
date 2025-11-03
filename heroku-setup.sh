@@ -48,5 +48,5 @@ EOF
 echo "✅ Heroku setup complete!"
 echo "📝 Next steps:"
 echo "1. git add ."
-echo "2. git commit -m 'Heroku deployment setup'"  
+echo "2. git commit -m 'Heroku deployment setup'"
 echo "3. git push heroku main"

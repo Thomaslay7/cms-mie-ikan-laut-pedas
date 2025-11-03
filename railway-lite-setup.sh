@@ -2,7 +2,7 @@
 
 # Replace heavy packages with lighter alternatives
 composer remove spatie/laravel-medialibrary --no-update
-composer remove maatwebsite/excel --no-update  
+composer remove maatwebsite/excel --no-update
 composer remove intervention/image-laravel --no-update
 
 # Install lighter alternatives
