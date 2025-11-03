@@ -1,12 +1,10 @@
 #!/bin/bash
 # Railway Deploy Script - Clean & Simple
-echo "🚀 Regina's Kitchen CMS - Railway Deployment"Railway Deploy Script - Simplified
+echo "🚀 Regina's Kitchen CMS - Railway Deployment"
 echo "🚀 Starting Railway Deploy Process..."
 
 # Skip extension checks - Railway handles this
-echo "📦 Using Railway's PHP setup..."sh
-# Railway Deploy Script
-echo "🚀 Starting Railway Deploy Process..."
+echo "📦 Using Railway's PHP setup..."
 
 # Install missing PHP extensions if needed
 echo "📦 Checking PHP Extensions..."
