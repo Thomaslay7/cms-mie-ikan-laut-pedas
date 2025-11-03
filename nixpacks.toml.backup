@@ -1,0 +1,14 @@
+[variables]
+PHP_VERSION = '8.1'
+
+[phases.setup]
+nixPkgs = ['php81', 'php81Packages.composer']
+
+[phases.build]
+cmds = [
+    'php81Packages.composer/bin/composer install --no-dev --ignore-platform-reqs --no-scripts --optimize-autoloader',
+    'npm ci && npm run build'
+]
+
+[start]
+cmd = 'vendor/bin/heroku-php-apache2 public/'
