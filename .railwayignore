@@ -1,0 +1,19 @@
+# Railway Ignore - Speed up builds
+node_modules/
+.git/
+.env.local
+.env.development
+.env.test
+*.log
+.DS_Store
+vendor/
+storage/logs/
+storage/framework/cache/
+storage/framework/sessions/
+storage/framework/views/
+bootstrap/cache/
+public/hot
+public/storage
+docker/
+*.dockerfile
+Dockerfile*

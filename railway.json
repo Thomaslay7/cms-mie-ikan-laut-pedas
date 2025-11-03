@@ -4,6 +4,6 @@
     "builder": "NIXPACKS"
   },
   "deploy": {
-    "startCommand": "vendor/bin/heroku-php-apache2 public/"
+    "startCommand": "bash simple-railway-deploy.sh && vendor/bin/heroku-php-apache2 public/"
   }
 }
