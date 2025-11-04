@@ -4,10 +4,11 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\BusinessInfoResource\Pages;
 use App\Models\BusinessInfo;
+use BackedEnum;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Form;
+use Filament\Schemas\Schema;
 use Filament\Resources\Resource;
 use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Actions\DeleteAction;
@@ -19,14 +20,14 @@ class SimpleBusinessInfoResource extends Resource
 {
     protected static ?string $model = BusinessInfo::class;
     
-    protected static ?string $navigationIcon = 'heroicon-o-building-office-2';
+    protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-building-office-2';
     
     protected static ?string $navigationLabel = 'Business Info';
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form
-            ->schema([
+        return $schema
+            ->components([
                 TextInput::make('business_name')
                     ->required()
                     ->maxLength(150),

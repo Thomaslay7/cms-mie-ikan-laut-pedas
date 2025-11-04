@@ -54,10 +54,7 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->darkMode(false)
             ->spa()
-            // ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
-            ->resources([
-                \App\Filament\Resources\AboutSections\AboutSectionResource::class,
-            ])
+            ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
                 Dashboard::class,

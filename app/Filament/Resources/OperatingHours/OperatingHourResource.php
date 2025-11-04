@@ -24,7 +24,7 @@ class OperatingHourResource extends Resource
 {
     protected static ?string $model = OperatingHour::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-clock';
+    protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-clock';
 
     protected static ?string $navigationLabel = 'Jam Operasional';
 

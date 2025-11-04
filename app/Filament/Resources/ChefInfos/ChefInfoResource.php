@@ -25,7 +25,7 @@ class ChefInfoResource extends Resource
 {
     protected static ?string $model = ChefInfo::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-user';
+    protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-user';
 
     protected static ?string $recordTitleAttribute = 'name';
 
