@@ -54,15 +54,15 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->darkMode(false)
             ->spa()
-            // ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')
+            // ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->resources([
-                // Add working resources here later
+                \App\Filament\Resources\AboutSections\AboutSectionResource::class,
             ])
-            ->discoverPages(in: app_path('Filament/Pages'), for: 'App\Filament\Pages')
+            ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
                 Dashboard::class,
             ])
-            // ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\Filament\Widgets')
+            // ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
                 AccountWidget::class,
             ])

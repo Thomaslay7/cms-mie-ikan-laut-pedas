@@ -7,14 +7,14 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\Toggle;
-use Filament\Forms\Form;
+use Filament\Schemas\Schema;
 
 class AboutSectionForm
 {
-    public static function configure(Form $form): Form
+    public static function configure(Schema $schema): Schema
     {
-        return $form
-            ->schema([
+        return $schema
+            ->components([
                 Select::make('business_info_id')
                     ->relationship('businessInfo', 'id')
                     ->required(),
@@ -22,7 +22,7 @@ class AboutSectionForm
                     ->required(),
                 Textarea::make('description')
                     ->required()
-                    ->columnSpan('full'),
+                    ->columnSpanFull(),
                 FileUpload::make('image')
                     ->image(),
                 Toggle::make('is_active')

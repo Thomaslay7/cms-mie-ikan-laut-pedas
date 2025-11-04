@@ -52,8 +52,7 @@ class DeliverySettingResource extends Resource
                     ->required(),
                 Toggle::make('is_pickup_enabled')
                     ->required(),
-                Textarea::make('delivery_notes')
-                    ->columnSpanFull(),
+                Textarea::make('delivery_notes'),
             ]);
     }
 
