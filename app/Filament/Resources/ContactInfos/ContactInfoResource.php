@@ -18,7 +18,7 @@ class ContactInfoResource extends Resource
 {
     protected static ?string $model = ContactInfo::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static ?string $navigationIcon = 'heroicon-o-phone';
 
     public static function form(Schema $schema): Schema
     {

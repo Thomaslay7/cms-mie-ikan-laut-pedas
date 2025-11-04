@@ -18,7 +18,7 @@ class DeliveryPlatformResource extends Resource
 {
     protected static ?string $model = DeliveryPlatform::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedTruck;
+    protected static ?string $navigationIcon = 'heroicon-o-truck';
 
     protected static ?string $navigationLabel = 'Delivery Platforms';
 

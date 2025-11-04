@@ -18,7 +18,7 @@ class SocialMediaResource extends Resource
 {
     protected static ?string $model = SocialMedia::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static ?string $navigationIcon = 'heroicon-o-share';
 
     public static function form(Schema $schema): Schema
     {

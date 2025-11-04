@@ -18,7 +18,7 @@ class FaqCategoryResource extends Resource
 {
     protected static ?string $model = FaqCategory::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static ?string $navigationIcon = 'heroicon-o-folder';
 
     public static function form(Schema $schema): Schema
     {

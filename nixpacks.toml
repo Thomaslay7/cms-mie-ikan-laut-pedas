@@ -1,0 +1,6 @@
+# Railway PHP 8.1 Configuration  
+[variables]
+PHP_VERSION = '8.1'
+
+[start]
+cmd = 'php -S 0.0.0.0:$PORT -t public'

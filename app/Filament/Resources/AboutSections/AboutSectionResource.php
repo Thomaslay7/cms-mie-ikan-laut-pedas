@@ -8,21 +8,19 @@ use App\Filament\Resources\AboutSections\Pages\ListAboutSections;
 use App\Filament\Resources\AboutSections\Schemas\AboutSectionForm;
 use App\Filament\Resources\AboutSections\Tables\AboutSectionsTable;
 use App\Models\AboutSection;
-use BackedEnum;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Schemas\Schema;
-use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 
 class AboutSectionResource extends Resource
 {
     protected static ?string $model = AboutSection::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
-    public static function form(Schema $schema): Schema
+    public static function form(Form $form): Form
     {
-        return AboutSectionForm::configure($schema);
+        return AboutSectionForm::configure($form);
     }
 
     public static function table(Table $table): Table

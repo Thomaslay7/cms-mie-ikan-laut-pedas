@@ -18,7 +18,7 @@ class HolidaySettingResource extends Resource
 {
     protected static ?string $model = HolidaySetting::class;
 
-    protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-calendar-days';
+    protected static ?string $navigationIcon = 'heroicon-o-calendar-days';
 
     protected static ?string $navigationLabel = 'Atur Hari Libur';
 

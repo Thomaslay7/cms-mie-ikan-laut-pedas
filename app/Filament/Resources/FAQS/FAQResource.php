@@ -24,7 +24,7 @@ class FAQResource extends Resource
 {
     protected static ?string $model = FAQ::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static ?string $navigationIcon = 'heroicon-o-question-mark-circle';
 
     protected static ?string $recordTitleAttribute = 'question';
 
