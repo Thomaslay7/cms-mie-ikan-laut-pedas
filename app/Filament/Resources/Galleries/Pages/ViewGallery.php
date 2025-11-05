@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Filament\Resources\GalleryResource\Pages;
+namespace App\Filament\Resources\Galleries\Pages;
 
-use App\Filament\Resources\GalleryResource;
+use App\Filament\Resources\Galleries\GalleryResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ViewRecord;
 
