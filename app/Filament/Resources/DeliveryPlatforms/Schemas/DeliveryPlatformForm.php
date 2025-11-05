@@ -14,6 +14,12 @@ class DeliveryPlatformForm
     {
         return $schema
             ->components([
+                \Filament\Forms\Components\Select::make('business_info_id')
+                    ->relationship('businessInfo', 'business_name')
+                    ->default(1)
+                    ->searchable()
+                    ->preload(),
+
                 TextInput::make('name')
                     ->required()
                     ->maxLength(255)
@@ -38,7 +44,17 @@ class DeliveryPlatformForm
                     ->label('Commission Rate (%)')
                     ->numeric()
                     ->suffix('%')
+                    ->default(0),
+
+                TextInput::make('sort_order')
+                    ->label('Display Order')
+                    ->numeric()
                     ->default(0)
+                    ->helperText('Lower numbers appear first'),
+
+                Toggle::make('is_active')
+                    ->label('Active')
+                    ->default(true)
                     ->helperText('Commission rate charged by platform'),
 
                 TextInput::make('sort_order')

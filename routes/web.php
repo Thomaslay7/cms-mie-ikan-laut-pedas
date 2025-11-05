@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/admin');
 });
 
 // Debug route to check session and CSRF
@@ -36,3 +36,47 @@ Route::get('/csrf-test', function () {
 Route::post('/test-csrf', function (Request $request) {
     return response()->json(['message' => 'CSRF test successful', 'data' => $request->all()]);
 })->name('test.csrf');
+
+// Database connection test route for Hostinger debugging
+Route::get('/test-db', function () {
+    try {
+        $pdo = DB::connection()->getPdo();
+        $version = DB::select('SELECT VERSION() as version')[0];
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Database connected successfully',
+            'mysql_version' => $version->version,
+            'config' => [
+                'host' => config('database.connections.mysql.host'),
+                'port' => config('database.connections.mysql.port'),
+                'database' => config('database.connections.mysql.database'),
+                'username' => config('database.connections.mysql.username'),
+                'password' => str_repeat('*', strlen(config('database.connections.mysql.password'))),
+            ]
+        ]);
+    } catch (\Exception $e) {
+        return response()->json([
+            'status' => 'error',
+            'message' => $e->getMessage(),
+            'config' => [
+                'host' => config('database.connections.mysql.host'),
+                'port' => config('database.connections.mysql.port'),
+                'database' => config('database.connections.mysql.database'),
+                'username' => config('database.connections.mysql.username'),
+            ]
+        ], 500);
+    }
+});
+
+// Environment info route
+Route::get('/env-info', function () {
+    return response()->json([
+        'app_env' => config('app.env'),
+        'app_debug' => config('app.debug'),
+        'app_url' => config('app.url'),
+        'cache_store' => config('cache.default'),
+        'session_driver' => config('session.driver'),
+        'db_connection' => config('database.default'),
+    ]);
+});
